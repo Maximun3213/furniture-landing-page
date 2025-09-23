@@ -2,7 +2,7 @@
 
 import { Box } from "@chakra-ui/react";
 import { useGSAP } from "@gsap/react";
-import gsap from "gsap";
+// import gsap from "gsap";
 import { useRef } from "react";
 
 interface ArrowEffectProps {
@@ -13,11 +13,11 @@ function ArrowEffect({ isBlack }: ArrowEffectProps): React.JSX.Element {
   const svgRef = useRef<SVGSVGElement>(null);
 
   useGSAP(() => {
-    gsap.to(svgRef.current, {
-      rotate: 360,
-      duration: 1,
-      ease: "power2.inOut",
-    });
+    // gsap.to(svgRef.current, {
+    //   rotate: 360,
+    //   duration: 1,
+    //   ease: "power2.inOut",
+    // });
   });
 
   return (
