@@ -28,13 +28,7 @@ export default function PrimaryButton({
     ...restProps
   } = props;
 
-  const primaryButtonClassNames = cn(
-    s.primaryButton,
-    size && s[`primaryButton_${size}`],
-    s[`primaryButton_${variant}`],
-    s[`primaryButton_${variant}_${color}`],
-    className
-  );
+  const primaryButtonClassNames = cn(s.primaryButton, className);
 
   return (
     <Button
@@ -42,6 +36,7 @@ export default function PrimaryButton({
       bgColor={"var(--black)"}
       height={"5.5rem"}
       cursor={"pointer"}
+      className={primaryButtonClassNames}
       {...restProps}
     >
       <Label
