@@ -1,4 +1,4 @@
-import { geistMono, geistSans } from "@/constants/fonts";
+import { libreBaskerville, roboto } from "@/constants/fonts";
 import { metadataConfig } from "@/constants/metadata";
 import NextTransitions from "@/layout/NextTransitions";
 import "@/styles/app.scss";
@@ -28,7 +28,7 @@ export default function RootLayout({
             <Script src="https://unpkg.com/react-scan/dist/auto.global.js"></Script>
           )}
         </head>
-        <body className={`${geistSans.variable} ${geistMono.variable}`}>
+        <body className={`${roboto.variable} ${libreBaskerville.variable}`}>
           <MainLayout>{children}</MainLayout>
         </body>
       </html>

@@ -4,17 +4,16 @@ import React from "react";
 
 import { TypoColor, TypoTagLabel } from "@/enums/typo";
 
+import { Button, ButtonProps } from "@chakra-ui/react";
 import s from "./styles.module.scss";
 
-type TPrimaryButton = {
+type TPrimaryButton = ButtonProps & {
   color?: "dark" | "yellow";
   size?: "small" | "medium" | "large";
   variant?: "solid" | "outline";
   weight?: "light" | "regular" | "bold";
   transform?: "uppercase" | "lowercase" | "capitalize";
   text?: string;
-  className?: string;
-  onClick?: () => void;
 };
 
 export default function PrimaryButton({
@@ -26,7 +25,7 @@ export default function PrimaryButton({
     variant = "solid",
     color = "dark",
     size = "large",
-    onClick,
+    ...restProps
   } = props;
 
   const primaryButtonClassNames = cn(
@@ -38,15 +37,21 @@ export default function PrimaryButton({
   );
 
   return (
-    <button className={primaryButtonClassNames} onClick={onClick}>
+    <Button
+      minWidth={"17.6rem"}
+      bgColor={"var(--black)"}
+      height={"5.5rem"}
+      cursor={"pointer"}
+      {...restProps}
+    >
       <Label
-        color={TypoColor.black}
-        size={size === "small" ? 16 : 24}
+        color={TypoColor.white_primary}
+        size={24}
         as={TypoTagLabel.label}
-        className={s.primaryButton_text}
+        fontWeight={500}
       >
         {text}
       </Label>
-    </button>
+    </Button>
   );
 }

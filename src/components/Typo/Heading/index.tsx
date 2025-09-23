@@ -1,13 +1,13 @@
 import cn from "classnames";
 import React from "react";
 
-import { FontWeight, TypoColor, TypoTagHeading } from "@/enums/typo";
+import { TypoColor, TypoTagHeading } from "@/enums/typo";
 
 import { Text, TextProps } from "@chakra-ui/react";
 import styles from "./styles.module.scss";
 
 interface HeadingProps extends TextProps {
-  size?: 25 | 30 | 60 | 64 | 72 | 85 | 88 | 250;
+  size?: 25 | 30 | 36 | 60 | 64 | 72 | 85 | 88 | 250;
   as?: TypoTagHeading;
   ref?: React.Ref<HTMLHeadingElement>;
 }
@@ -18,7 +18,6 @@ const Heading = ({ ...props }: HeadingProps): React.JSX.Element => {
     color = TypoColor.black,
     size = 72,
     as = TypoTagHeading.h1,
-    fontWeight = FontWeight.normal,
     children,
     className,
     ...restProps
@@ -32,13 +31,7 @@ const Heading = ({ ...props }: HeadingProps): React.JSX.Element => {
   );
 
   return (
-    <Text
-      {...restProps}
-      ref={ref}
-      as={as}
-      fontWeight={fontWeight}
-      className={textClassNames}
-    >
+    <Text {...restProps} ref={ref} as={as} className={textClassNames}>
       {children}
     </Text>
   );

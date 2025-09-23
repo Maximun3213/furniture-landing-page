@@ -1,6 +1,6 @@
 .text {
   font-style: normal;
-  line-height: 100%;
+  line-height: normal;
 
   &__25 {
     font-size: rem(25px);
@@ -8,6 +8,11 @@
 
   &__30 {
     font-size: rem(30px);
+  }
+
+  &__36 {
+    font-size: rem(36px);
+    letter-spacing: rem(5.94px);
   }
 
   &__60 {
