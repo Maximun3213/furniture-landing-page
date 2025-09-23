@@ -1,5 +1,6 @@
 "use client";
 
+import ArrowEffect from "@/components/ArrowEffect";
 import Paragraph from "@/components/Typo/Paragraph";
 import { TypoColor, TypoTagHeading, TypoTagParagraph } from "@/enums/typo";
 import { Box, Flex } from "@chakra-ui/react";
@@ -75,6 +76,7 @@ function HomePage(): React.ReactElement {
           in pulvinar eu. er condimentum adipiscing sapien proin. Aliquet amet
           entum adipiscing sapien proin.
         </Paragraph>
+        <ArrowEffect />
       </Flex>
     </Box>
   );

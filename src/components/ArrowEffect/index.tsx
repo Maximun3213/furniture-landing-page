@@ -1,0 +1,35 @@
+import { Box } from "@chakra-ui/react";
+
+interface ArrowEffectProps {
+  isBlack?: boolean;
+}
+
+function ArrowEffect({ isBlack }: ArrowEffectProps): React.JSX.Element {
+  return (
+    <Box
+      width={"10.2rem"}
+      height={"auto"}
+      css={{
+        "& svg": {
+          width: "100%",
+          height: "100%",
+        },
+      }}
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="102"
+        height="16"
+        viewBox="0 0 102 16"
+        fill="none"
+      >
+        <path
+          d="M101.707 8.70711C102.098 8.31658 102.098 7.68342 101.707 7.29289L95.3431 0.928932C94.9526 0.538408 94.3195 0.538408 93.9289 0.928932C93.5384 1.31946 93.5384 1.95262 93.9289 2.34315L99.5858 8L93.9289 13.6569C93.5384 14.0474 93.5384 14.6805 93.9289 15.0711C94.3195 15.4616 94.9526 15.4616 95.3431 15.0711L101.707 8.70711ZM0 9H101V7H0V9Z"
+          fill={isBlack ? "#191B1D" : "#F1F1F1"}
+        />
+      </svg>
+    </Box>
+  );
+}
+
+export default ArrowEffect;
