@@ -7,7 +7,7 @@ import { Text, TextProps } from "@chakra-ui/react";
 import styles from "./styles.module.scss";
 
 interface HeadingProps extends TextProps {
-  size?: 25 | 30 | 36 | 60 | 64 | 72 | 85 | 88 | 250;
+  size?: 25 | 30 | 36 | 48 | 60 | 64 | 72 | 85 | 88 | 250;
   as?: TypoTagHeading;
   ref?: React.Ref<HTMLHeadingElement>;
 }
@@ -20,6 +20,7 @@ const Heading = ({ ...props }: HeadingProps): React.JSX.Element => {
     as = TypoTagHeading.h1,
     children,
     className,
+    fontFamily = "var(--font-libre-baskerville)",
     ...restProps
   } = props;
 
@@ -31,7 +32,13 @@ const Heading = ({ ...props }: HeadingProps): React.JSX.Element => {
   );
 
   return (
-    <Text {...restProps} ref={ref} as={as} className={textClassNames}>
+    <Text
+      {...restProps}
+      ref={ref}
+      as={as}
+      className={textClassNames}
+      fontFamily={fontFamily}
+    >
       {children}
     </Text>
   );
