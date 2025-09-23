@@ -1,40 +1,39 @@
 "use client";
 
+import FadeText from "@/animation/components/FadeText";
 import ArrowEffect from "@/components/ArrowEffect";
 import Paragraph from "@/components/Typo/Paragraph";
 import { TypoColor, TypoTagHeading, TypoTagParagraph } from "@/enums/typo";
 import { Box, Flex } from "@chakra-ui/react";
 import ImagePlaceHolder from "@Components/ImagePlaceHolder";
 import Heading from "@Components/Typo/Heading";
-import { useGSAP } from "@gsap/react";
-import gsap from "gsap";
 import React from "react";
-import splitType from "split-type";
+// import splitType from "split-type";
 
 function HomePage(): React.ReactElement {
   const containerRef = React.useRef<HTMLDivElement>(null);
 
-  useGSAP(
-    () => {
-      const text = new splitType(".home h1", {
-        types: "chars",
-      });
+  // useGSAP(
+  //   () => {
+  //     const text = new splitType(".home h1", {
+  //       types: "chars",
+  //     });
 
-      gsap.set(text.chars, {
-        y: 50,
-      });
+  //     gsap.set(text.chars, {
+  //       y: 50,
+  //     });
 
-      gsap.to(text.chars, {
-        y: 0,
-        duration: 1,
-        stagger: 0.075,
-        ease: "power3.in",
-      });
-    },
-    {
-      scope: containerRef,
-    }
-  );
+  //     gsap.to(text.chars, {
+  //       y: 0,
+  //       duration: 1,
+  //       stagger: 0.075,
+  //       ease: "power3.in",
+  //     });
+  //   },
+  //   {
+  //     scope: containerRef,
+  //   }
+  // );
 
   return (
     <Box className={"home"} ref={containerRef} position={"relative"}>
@@ -54,16 +53,18 @@ function HomePage(): React.ReactElement {
         transform={"translateY(-50%)"}
         left={"16.8rem"}
       >
-        <Heading
-          size={48}
-          overflow={"hidden"}
-          fontWeight={400}
-          maxWidth={"52.7rem"}
-          as={TypoTagHeading.h1}
-          color={TypoColor.white_primary}
-        >
-          Decorate Your Home With Furniture
-        </Heading>
+        <FadeText>
+          <Heading
+            size={48}
+            fontWeight={400}
+            maxWidth={"52.7rem"}
+            as={TypoTagHeading.h1}
+            color={TypoColor.white_primary}
+          >
+            Decorate Your Home With Furniture
+          </Heading>
+        </FadeText>
+
         <Paragraph
           size={18}
           fontWeight={500}
