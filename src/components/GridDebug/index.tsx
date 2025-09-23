@@ -2,7 +2,7 @@
 import cn from "classnames";
 import React, { useCallback, useEffect, useState } from "react";
 
-import { Container } from "@Components/Container";
+import { Container, GridContainer } from "@Components/Container";
 import s from "./styles.module.scss";
 
 const GridColumn = (): React.ReactElement => (
@@ -40,11 +40,11 @@ export default function GridDebug(): React.ReactElement {
   return (
     <div className={cn(s.gridDebug, !isGrid && s.hidden)}>
       <Container>
-        <div className={s.grid_container}>
+        <GridContainer>
           {Array.from({ length: 12 }).map((_, index) => (
             <GridColumn key={`grid-column-${index.toString()}`} />
           ))}
-        </div>
+        </GridContainer>
       </Container>
     </div>
   );

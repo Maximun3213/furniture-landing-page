@@ -8,8 +8,7 @@ import { Button, ButtonProps } from "@chakra-ui/react";
 import s from "./styles.module.scss";
 
 type TPrimaryButton = ButtonProps & {
-  color?: "dark" | "yellow";
-  size?: "small" | "medium" | "large";
+  color?: "dark" | "white";
   variant?: "solid" | "outline";
   weight?: "light" | "regular" | "bold";
   transform?: "uppercase" | "lowercase" | "capitalize";
@@ -33,7 +32,8 @@ export default function PrimaryButton({
   return (
     <Button
       minWidth={"17.6rem"}
-      bgColor={"var(--black)"}
+      bgColor={color === "dark" ? "var(--black)" : "transparent"}
+      border={color === "dark" ? "none" : "1px solid var(--white)"}
       height={"5.5rem"}
       cursor={"pointer"}
       className={primaryButtonClassNames}
