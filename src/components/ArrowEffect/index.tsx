@@ -1,10 +1,25 @@
+"use client";
+
 import { Box } from "@chakra-ui/react";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import { useRef } from "react";
 
 interface ArrowEffectProps {
   isBlack?: boolean;
 }
 
 function ArrowEffect({ isBlack }: ArrowEffectProps): React.JSX.Element {
+  const svgRef = useRef<SVGSVGElement>(null);
+
+  useGSAP(() => {
+    gsap.to(svgRef.current, {
+      rotate: 360,
+      duration: 1,
+      ease: "power2.inOut",
+    });
+  });
+
   return (
     <Box
       width={"10.2rem"}
@@ -17,6 +32,7 @@ function ArrowEffect({ isBlack }: ArrowEffectProps): React.JSX.Element {
       }}
     >
       <svg
+        ref={svgRef}
         xmlns="http://www.w3.org/2000/svg"
         width="102"
         height="16"
