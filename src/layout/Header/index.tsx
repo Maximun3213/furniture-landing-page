@@ -15,7 +15,12 @@ function Header(): React.JSX.Element {
       <Box bgColor={"var(--black)"} py={"3.5rem"}>
         <Container>
           <Flex justifyContent={"space-between"} alignItems={"center"}>
-            <Heading size={36} fontWeight={500} color={TypoColor.white}>
+            <Heading
+              size={36}
+              fontWeight={500}
+              fontFamily={"var(--font-roboto)"}
+              color={TypoColor.white}
+            >
               DETROA.
             </Heading>
             <Paragraph size={20} fontWeight={500} color={TypoColor.white}>
