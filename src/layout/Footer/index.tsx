@@ -1,12 +1,13 @@
 import { Container, GridContainer } from "@Components/Container";
 import React from "react";
+import { CiHome, CiMail, CiPhone } from "react-icons/ci";
 
 import LinkEffect from "@/components/LinkEffect";
 import Heading from "@/components/Typo/Heading";
 import Label from "@/components/Typo/Label";
 import Paragraph from "@/components/Typo/Paragraph";
 import { TypoColor } from "@/enums/typo";
-import { Box, Flex } from "@chakra-ui/react";
+import { Box, Flex, Link } from "@chakra-ui/react";
 
 function Footer(): React.JSX.Element {
   return (
@@ -50,19 +51,36 @@ function Footer(): React.JSX.Element {
                   Get in Touch
                 </Label>
                 <Flex gap={"2rem"} flexDirection={"column"}>
-                  <a href="tel:0-8-888-0001">
+                  <Link
+                    href="tel:0-8-888-0001"
+                    display={"flex"}
+                    alignItems={"center"}
+                    gap={"1rem"}
+                  >
+                    <CiPhone size={20} />
                     <Label size={18} fontWeight={500} color={TypoColor.milk}>
                       0-8-888-0001
                     </Label>
-                  </a>
-                  <Label size={18} fontWeight={500} color={TypoColor.milk}>
-                    Santa Clara, Mexico
-                  </Label>
-                  <a href="mailto:info@domain.com">
+                  </Link>
+                  <Flex alignItems={"center"} gap={"1rem"}>
+                    <CiHome size={20} />
+                    <Label size={18} fontWeight={500} color={TypoColor.milk}>
+                      Santa Clara, Mexico
+                    </Label>
+                  </Flex>
+
+                  <Link
+                    href="mailto:info@domain.com"
+                    display={"flex"}
+                    alignItems={"center"}
+                    gap={"1rem"}
+                  >
+                    <CiMail size={20} />
+
                     <Label size={18} fontWeight={500} color={TypoColor.milk}>
                       info@domai.com
                     </Label>
-                  </a>
+                  </Link>
                 </Flex>
               </Box>
               <Box>
