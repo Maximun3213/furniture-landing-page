@@ -1,6 +1,6 @@
 import { useGSAP } from "@gsap/react";
 import { Signal, useSignal, useSignalEffect } from "@preact/signals-react";
-import { RefObject, useLayoutEffect } from "react";
+import { RefObject, useEffect } from "react";
 
 interface UseAnimateProps {
   elementRef: RefObject<HTMLElement | null>;
@@ -31,7 +31,7 @@ const useAnimate = ({
     onStart();
   });
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     const element = elementRef.current;
 
     const visible = new IntersectionObserver(
