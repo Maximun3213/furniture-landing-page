@@ -2,6 +2,7 @@ import Hero from "@/modules/HomePage/Hero";
 import Interesting from "@/modules/HomePage/Interesting";
 import Live from "@/modules/HomePage/Live";
 import Solution from "@/modules/HomePage/Solution";
+import TheirHome from "@/modules/HomePage/TheirHome";
 import React from "react";
 
 function HomePage(): React.ReactElement {
@@ -11,6 +12,7 @@ function HomePage(): React.ReactElement {
       <Solution />
       <Interesting />
       <Live />
+      <TheirHome />
     </>
   );
 }
