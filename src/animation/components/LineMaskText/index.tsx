@@ -23,24 +23,12 @@ function LineMaskText({ children }: PropsWithChildren) {
       linesClass: "lineParent",
     });
 
-    // new SplitText(elementRef.current, {
-    //   type: "lines",
-    //   lineClass: "lineParent",
-    // });
-
     gsap.set(splitText.current?.lines || [], {
       yPercent: 200,
     });
   };
 
   const startAnimation = () => {
-    // gsap.to(splitText.current?.lines || [], {
-    //   yPercent: 0,
-    //   duration: 1,
-    //   stagger: 0.05,
-    //   delay: 0.5,
-    // });
-
     gsap.to(splitText.current?.lines || [], {
       duration: 1,
       yPercent: 0,
@@ -62,9 +50,6 @@ function LineMaskText({ children }: PropsWithChildren) {
         "& .lineParent": {
           overflow: "hidden",
         },
-        // "& .lineChild": {
-        //   yPercent: 100,
-        // },
       }}
     >
       {children}
