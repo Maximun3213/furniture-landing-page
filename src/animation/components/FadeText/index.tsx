@@ -1,17 +1,17 @@
+import useAnimate from "@/animation/hooks/useAnimate";
 import { Box } from "@chakra-ui/react";
-import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import SplitText from "gsap/SplitText";
 import React, { PropsWithChildren, useRef } from "react";
 
 type FadeTextProps = PropsWithChildren & {};
 
+gsap.registerPlugin(SplitText);
+
 function FadeText({ children }: FadeTextProps): React.JSX.Element {
   const containerRef = useRef<HTMLDivElement>(null);
 
-  useGSAP(() => {
-    gsap.registerPlugin(SplitText);
-
+  const startAnimation = () => {
     const splitText = new SplitText(containerRef.current, {
       type: "words",
     });
@@ -26,6 +26,11 @@ function FadeText({ children }: FadeTextProps): React.JSX.Element {
       stagger: 0.075,
       ease: "power3.in",
     });
+  };
+
+  useAnimate({
+    elementRef: containerRef,
+    onStart: startAnimation,
   });
 
   if (!React.isValidElement(children)) {

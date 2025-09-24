@@ -4950,6 +4950,11 @@ react-is@^16.13.1, react-is@^16.7.0:
   resolved "https://registry.npmjs.org/react-is/-/react-is-16.13.1.tgz"
   integrity sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==
 
+react-slot-counter@^3.3.1:
+  version "3.3.1"
+  resolved "https://registry.yarnpkg.com/react-slot-counter/-/react-slot-counter-3.3.1.tgz#7ecae9e174863c103eea00b307d4f51608638ad1"
+  integrity sha512-+blRPrKBLDC9GyyGENfyNQYOW3XxkaWmUL1fTtut3slZQS2+yMaAJdvwAyWUYB1eD+6Pd1aZzXFmBxmlSkvhfg==
+
 react@^19.1.1:
   version "19.1.1"
   resolved "https://registry.npmjs.org/react/-/react-19.1.1.tgz"
