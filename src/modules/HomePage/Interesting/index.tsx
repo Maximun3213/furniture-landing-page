@@ -1,3 +1,4 @@
+import FadeBox from "@/animation/components/FadeBox";
 import LineMaskText from "@/animation/components/LineMaskText";
 import ArrowEffect from "@/components/ArrowEffect";
 import { Container, GridContainer } from "@/components/Container";
@@ -6,6 +7,24 @@ import Paragraph from "@/components/Typo/Paragraph";
 import { TypoColor } from "@/enums/typo";
 import { Box, Flex } from "@chakra-ui/react";
 import NumCircle from "./NumCircle";
+
+const items = [
+  {
+    num: 215,
+    title: "Coworker",
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing",
+  },
+  {
+    num: 300,
+    title: "Desk",
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing",
+  },
+  {
+    num: 50,
+    title: "Rooms",
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing",
+  },
+];
 
 function Interesting(): React.JSX.Element {
   return (
@@ -18,27 +37,15 @@ function Interesting(): React.JSX.Element {
               justifyContent={"space-between"}
               paddingRight={"9.3rem"}
             >
-              <NumCircle
-                num={215}
-                title={"Coworker"}
-                description={
-                  "Lorem ipsum dolor sit amet, consectetur adipiscing"
-                }
-              />
-              <NumCircle
-                num={300}
-                title={"Desk"}
-                description={
-                  "Lorem ipsum dolor sit amet, consectetur adipiscing"
-                }
-              />
-              <NumCircle
-                num={50}
-                title={"Rooms"}
-                description={
-                  "Lorem ipsum dolor sit amet, consectetur adipiscing"
-                }
-              />
+              {items.map((item, index) => (
+                <FadeBox key={item.num} motion={{ delay: 0.2 * index }}>
+                  <NumCircle
+                    num={item.num}
+                    title={item.title}
+                    description={item.description}
+                  />
+                </FadeBox>
+              ))}
             </Flex>
           </Box>
           <Box gridColumn={"span 4"}>
