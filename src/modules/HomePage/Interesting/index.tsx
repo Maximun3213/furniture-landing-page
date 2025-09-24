@@ -1,3 +1,4 @@
+import LineMaskText from "@/animation/components/LineMaskText";
 import ArrowEffect from "@/components/ArrowEffect";
 import { Container, GridContainer } from "@/components/Container";
 import Heading from "@/components/Typo/Heading";
@@ -46,13 +47,15 @@ function Interesting(): React.JSX.Element {
                 Interesting Design & Great Look
               </Heading>
               <ArrowEffect isBlack />
-              <Paragraph size={18} fontWeight={500} color={TypoColor.gray}>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
-                condimentum adipiscing sapien proin. Aliquet amet non enim, ut
-                aliquet in pulvinar eu. er condimentum adipiscing sapien proin.
-                Aliquet amet entum adipiscing sapien proin. r condimentum
-                adipiscin
-              </Paragraph>
+              <LineMaskText>
+                <Paragraph size={18} fontWeight={500} color={TypoColor.gray}>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  Integer condimentum adipiscing sapien proin. Aliquet amet non
+                  enim, ut aliquet in pulvinar eu. er condimentum adipiscing
+                  sapien proin. Aliquet amet entum adipiscing sapien proin. r
+                  condimentum adipiscin
+                </Paragraph>
+              </LineMaskText>
             </Flex>
           </Box>
         </GridContainer>

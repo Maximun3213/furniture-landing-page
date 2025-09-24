@@ -1,10 +1,12 @@
 "use client";
 
+import useAnimate from "@/animation/hooks/useAnimate";
 import Label from "@/components/Typo/Label";
 import Paragraph from "@/components/Typo/Paragraph";
 import { TypoColor } from "@/enums/typo";
 import { Box, Flex } from "@chakra-ui/react";
-import SlotCounter from "react-slot-counter";
+import { useRef } from "react";
+import SlotCounter, { SlotCounterRef } from "react-slot-counter";
 
 interface NumCircleProps {
   num: number;
@@ -17,6 +19,16 @@ function NumCircle({
   title,
   description,
 }: NumCircleProps): React.JSX.Element {
+  const counterRef = useRef<SlotCounterRef>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  useAnimate({
+    elementRef: containerRef,
+    onStart: () => {
+      counterRef.current?.startAnimation();
+    },
+  });
+
   return (
     <Flex
       flexDirection={"column"}
@@ -24,6 +36,7 @@ function NumCircle({
       alignItems={"center"}
       maxWidth={"24.8rem"}
       textAlign={"center"}
+      ref={containerRef}
     >
       <Box
         w={"21.1rem"}
@@ -62,13 +75,12 @@ function NumCircle({
         >
           <SlotCounter
             value={num}
+            ref={counterRef}
             startValue={0}
-            animateOnVisible
             duration={1}
             dummyCharacterCount={1}
             direction="bottom-up"
             autoAnimationStart={false}
-            sequentialAnimationMode
           />
         </Label>
       </Box>

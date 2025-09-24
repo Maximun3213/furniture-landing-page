@@ -1,6 +1,7 @@
 "use client";
 
 import FadeText from "@/animation/components/FadeText";
+import LineMaskText from "@/animation/components/LineMaskText";
 import ArrowEffect from "@/components/ArrowEffect";
 import { TypoColor, TypoTagHeading, TypoTagParagraph } from "@/enums/typo";
 import { Box, Flex } from "@chakra-ui/react";
@@ -39,19 +40,21 @@ function Hero(): React.JSX.Element {
             Decorate Your Home With Furniture
           </Heading>
         </FadeText>
+        <LineMaskText>
+          <Paragraph
+            size={18}
+            fontWeight={500}
+            maxWidth={"71.8rem"}
+            as={TypoTagParagraph.p}
+            color={TypoColor.white_primary}
+          >
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
+            condimentum adipiscing sapien proin. Aliquet amet non enim, ut
+            aliquet in pulvinar eu. er condimentum adipiscing sapien proin.
+            Aliquet amet entum adipiscing sapien proin.
+          </Paragraph>
+        </LineMaskText>
 
-        <Paragraph
-          size={18}
-          fontWeight={500}
-          maxWidth={"71.8rem"}
-          as={TypoTagParagraph.p}
-          color={TypoColor.white_primary}
-        >
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
-          condimentum adipiscing sapien proin. Aliquet amet non enim, ut aliquet
-          in pulvinar eu. er condimentum adipiscing sapien proin. Aliquet amet
-          entum adipiscing sapien proin.
-        </Paragraph>
         <ArrowEffect />
       </Flex>
     </Box>

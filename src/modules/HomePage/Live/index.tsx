@@ -1,3 +1,4 @@
+import LineMaskText from "@/animation/components/LineMaskText";
 import PrimaryButton from "@/components/Buttons/PrimaryButton";
 import ImagePlaceHolder from "@/components/ImagePlaceHolder";
 import Heading from "@/components/Typo/Heading";
@@ -34,21 +35,25 @@ function Live(): React.JSX.Element {
         >
           Furniture Change Your Live
         </Heading>
-        <Paragraph
-          size={18}
-          fontWeight={500}
-          color={TypoColor.white}
-          as={TypoTagParagraph.p}
-          maxWidth={"137.3rem"}
-          textAlign={"center"}
-        >
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
-          condimentum adipiscing sapien proin. Aliquet amet non enim, ut aliquet
-          in pulvinar eu. er condimentum adipiscing sapien proin. Aliquet amet
-          entum adipiscing sapien proin. r condimentum adipiscin adipiscing
-          sapien proin. Aliquet amet scing sapien proin. r condimentum adipiscin
-          adipiscing sapien proin.
-        </Paragraph>
+
+        <LineMaskText>
+          <Paragraph
+            size={18}
+            fontWeight={500}
+            color={TypoColor.white}
+            as={TypoTagParagraph.p}
+            maxWidth={"137.3rem"}
+            textAlign={"center"}
+          >
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
+            condimentum adipiscing sapien proin. Aliquet amet non enim, ut
+            aliquet in pulvinar eu. er condimentum adipiscing sapien proin.
+            Aliquet amet entum adipiscing sapien proin. r condimentum adipiscin
+            adipiscing sapien proin. Aliquet amet scing sapien proin. r
+            condimentum adipiscin adipiscing sapien proin.
+          </Paragraph>
+        </LineMaskText>
+
         <PrimaryButton text="Details" color="white" />
       </Flex>
     </Box>

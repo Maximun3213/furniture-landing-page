@@ -38,7 +38,7 @@ function FadeText({ children }: FadeTextProps): React.JSX.Element {
   }
 
   return (
-    <Box className={"fade-text"} overflow={"hidden"} ref={containerRef}>
+    <Box overflow={"hidden"} ref={containerRef}>
       {children}
     </Box>
   );
