@@ -6,6 +6,7 @@ export enum TypoColor {
   blue = "blue",
   white_primary = "white-primary",
   gray = "gray",
+  milk = "milk",
 }
 
 export enum FontWeight {
